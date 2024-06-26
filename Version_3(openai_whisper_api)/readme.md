@@ -27,11 +27,11 @@ This project provides scripts for recording and transcribing long academic resea
 
 ***
 
-# OpenAI Whisper-1 モデルを使用した音声認識
+# OpenAI Whisper-1 モデルを使用した音声認識とGPT-4oを使用した後処理
 
-このプロジェクトは、長時間の学術研究プレゼンテーションを録音し、文字起こしを行うためのスクリプトを提供します。
+このプロジェクトは、学術研究プレゼンテーションを録音し、文字起こしを行うためのスクリプトを提供します。
 
-## 何ができるのか？
+## 機能
 
 1. Zoomやマイクからの音声を録音し、Whisper-1モデルを使用して文字起こしを生成します。
 2. 録音した音声の文脈（研究タイトル、研究概要、発表者の名前）を含む文字起こしをGPT-4で後処理します。
@@ -56,9 +56,9 @@ This project provides scripts for recording and transcribing long academic resea
 
 ***
 
-# 使用 OpenAI Whisper-1 模型进行语音转文本
+# 使用 OpenAI Whisper-1 模型进行语音转文本与使用GPT-4o进行文本的后续处理
 
-该项目提供了用于录制和转录长时间学术研究演讲的脚本。
+该项目提供了用于录制和转录长时间的学术研究演讲的脚本。
 
 ## 功能简介
 
