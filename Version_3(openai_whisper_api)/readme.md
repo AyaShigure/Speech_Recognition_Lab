@@ -3,7 +3,7 @@
 
 ## What does it do?
 1. Recording audio from zoom or microphone and output transcripts with Whisper-1 model.
-2. Postprocessing the transcription with GPT-4o, context of the recorded
+2. Postprocessing the transcription with GPT-4o, context of the recorded audio including research title, research abstract, and presenter's name is needed.
 
 ## Note
 1. The scripts are build and tested on macOS.
