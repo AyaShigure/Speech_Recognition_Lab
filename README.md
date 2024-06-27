@@ -31,7 +31,7 @@ This project provides scripts for recording and transcribing long academic resea
 
 ***
 
-# OpenAI Whisper-1 モデルを使用した音声認識とGPT-4oを使用した後処理 (Version 3.1)
+# OpenAI Whisper-1 モデルを使用した文字起こしとGPT-4oを使用した後処理 (Version 3.1)
 
 このプロジェクトは、学術研究プレゼンテーションを録音し、文字起こしを行うためのスクリプトを提供します。
 
