@@ -1,5 +1,10 @@
 # Speech to Text with OpenAI Whisper-1 Model and GPT-4o for Post Processing
 # Version 3.1
+
+# Upcoming Version 4 (ToDo):
+1. Add a easy to use GUI
+2. Add a requirement.txt
+
 This project provides scripts for recording and transcribing long academic research presentations.
 
 ## What Does It Do?
