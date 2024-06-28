@@ -1,5 +1,4 @@
-# Speech to Text with OpenAI Whisper-1 Model and GPT-4o for Post Processing
-# Version 3.1
+# Speech to Text with OpenAI Whisper-1 Model and GPT-4o for Post Processing (Version 3.1)
 
 # Upcoming Version 4 (ToDo):
 1. Add a easy to use GUI
@@ -32,8 +31,7 @@ This project provides scripts for recording and transcribing long academic resea
 
 ***
 
-# OpenAI Whisper-1 モデルを使用した音声認識とGPT-4oを使用した後処理
-# Version 3.1
+# OpenAI Whisper-1 モデルを使用した文字起こしとGPT-4oを使用した後処理 (Version 3.1)
 
 このプロジェクトは、学術研究プレゼンテーションを録音し、文字起こしを行うためのスクリプトを提供します。
 
@@ -62,8 +60,7 @@ This project provides scripts for recording and transcribing long academic resea
 
 ***
 
-# 使用 OpenAI Whisper-1 模型进行语音转文本与使用GPT-4o进行文本的后续处理
-# Version 3.1
+# 使用 OpenAI Whisper-1 模型进行语音转文本与使用GPT-4o进行文本的后续处理 (Version 3.1)
 
 该项目提供了用于录制和转录长时间的学术研究演讲的脚本。
 
