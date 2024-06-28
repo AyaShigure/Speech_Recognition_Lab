@@ -88,11 +88,14 @@ def read_text_file(file_path):
             content = file.read()
         return content
     except FileNotFoundError:
-        print(f"Error: The file at {file_path} was not found.")
-        return None
+        print(systemHeaderString + ' ' + bcolors.FAIL + f"Error: The file at {file_path} was not found." + bcolors.ENDC)
+        print(systemHeaderString + ' ' + bcolors.FAIL + f"Please check if the file name is set up correctly." + bcolors.ENDC)
+        print(systemHeaderString + ' ' + bcolors.FAIL + f"Exiting.." + bcolors.ENDC)
+        os._exit(0)
     except IOError:
-        print(f"Error: An error occurred while reading the file at {file_path}.")
-        return None
+        print(systemHeaderString + ' ' + bcolors.FAIL + f"Error: An error occurred while reading the file at {file_path}." + bcolors.ENDC)
+        print(systemHeaderString + ' ' + bcolors.FAIL + f"Exiting.." + bcolors.ENDC)
+        os._exit(0)
 
 def split_list_into_chunks(input_list, chunk_size):
     """Splits a list into smaller lists of a fixed size."""
@@ -120,6 +123,7 @@ if __name__ == '__main__':
     ####################### USER INPUT SECTION: #######################
 
     # Note: Raw transcript must be {presentation_info_object['name']}.txt
+
     presentation_info_object = {
         'name': '',
         'research_title': '',
@@ -148,7 +152,8 @@ if __name__ == '__main__':
 
     for i in range(chunk_num):
         GPT_Prompt = '研究のタイトル：{}'.format(presentation_info_object['research_title']) + '\n' + '研究の概要：{}'.format(presentation_info_object['research_abstract'])
-        GPT_Prompt = f'このは発表の発表を録音してスクリプトをwhisperで取り出したもので、第{i+1}部分である。スクリプトに聞き間違いがあり、研究のタイトルと概要に基づいて修正するとともに句読点をつけてください。特に、「以下は修正したスクリプト」など修正したスクリプトと関係しないものは一切示さないでください'
+        GPT_Prompt = GPT_Prompt + f'このは発表の発表を録音してスクリプトをwhisperで取り出したもので、第{i+1}部分である。スクリプトに聞き間違いがあり、研究のタイトルと概要に基づいて修正するとともに句読点をつけてください。特に、「以下は修正したスクリプト」など修正したスクリプトと関係しないものは一切示さないでください。'
+        GPT_Prompt = GPT_Prompt + 'また、翻訳は一切しないで、与えられたスクリプトの言語に従いなさい'
         GPT_Prompt = GPT_Prompt + '\n\n' + '発表のスクリプト：\n{}'.format(chunks[i])
 
         if not DEBUG_MODE:
