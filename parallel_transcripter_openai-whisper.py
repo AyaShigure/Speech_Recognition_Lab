@@ -4,7 +4,6 @@ import os
 import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-import whisper
 import datetime
 import keyboard
 import sys
@@ -133,6 +132,8 @@ def main():
 
     observer.join()
     print(headerString + ' ' + bcolors.HEADER + 'Monitoring stopped.' + bcolors.ENDC)
+    print(headerString + ' ' + bcolors.FAIL + 'KeyboardInterruption is detected, shutting down..' + bcolors.ENDC)
+    os._exit(0)
 
 
 if __name__ == "__main__":
@@ -140,5 +141,5 @@ if __name__ == "__main__":
     DEBUG_MODE = False
     
     headerString = PrintTranscripterHeader()
-    main()
+    main() # Keyboard interruption is handeled in the main function.
     # PrintTranscripterHeader()

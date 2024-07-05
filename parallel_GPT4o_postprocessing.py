@@ -3,6 +3,11 @@ import os
 import datetime
 from bcolors import bcolors
 
+# Upgrade note (2024-7-5):
+#   0. transcription.txtにせずに、発表者の名前にする
+#   1. 開始前にtranscription.txtを削除 
+#  bug fix, ./segements dir
+
 # Utilities
 def PrintGPTHeader():
     print('[' +  bcolors.color256(fg=154) + 'OpenAI GPT4o' + bcolors.ENDC + ' | '+ f'{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}' + ']' + ' Initiallizing')

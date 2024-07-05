@@ -5,6 +5,7 @@ import keyboard
 import datetime
 import sys
 import time
+import os
 
 from bcolors import bcolors
 # Use bcolors.OKGREEN for recoder
@@ -131,7 +132,10 @@ def main():
 if __name__ == "__main__":
     # Device overridey
     micInOverrideFlag = False
-
     headerString = PrintReoderHeader()
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print(headerString + ' ' + bcolors.FAIL + 'KeyboardInterruption is detected, shutting down..' + bcolors.ENDC)
+        os._exit(0)
     # PrintReoderHeader()
