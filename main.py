@@ -10,7 +10,7 @@ def PrintSystemHeader():
     return headerString
 
 def run_script(script_name):
-    subprocess.call(['python3.10-intel64', script_name])
+    subprocess.call(['python3', script_name])
 
 if __name__ == "__main__":
 

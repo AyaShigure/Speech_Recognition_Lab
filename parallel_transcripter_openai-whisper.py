@@ -71,7 +71,7 @@ def main():
 
     if DEBUG_MODE:
         print(headerString + ' ' + bcolors.WARNING + 'Debug mode is on, OpenAI API for Whisper-1 will not be called.' + bcolors.ENDC)
-    print(headerString + ' ' + bcolors.OKCYAN+'Use command "sudo -E python3.10-intel64" to run the scripts!'+bcolors.ENDC)
+    print(headerString + ' ' + bcolors.OKCYAN+'Use command "sudo -E python3" to run the scripts!'+bcolors.ENDC)
 
     if is_running_as_sudo() != 1:
         # print(bcolors.BOLD + '\n===================================' + bcolors.ENDC)
@@ -119,7 +119,7 @@ def main():
             for i in range(detectionInterval):
                 time.sleep(0.001)
                 # exit via detection
-                if keyboard.is_pressed('q'): # Exit
+                if keyboard.is_pressed('esc'): # Exit
                     print(headerString + ' ' + bcolors.OKBLUE + 'Transcripter is exiting...' + bcolors.ENDC)
                     observer.stop()
                     observer.join()

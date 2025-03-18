@@ -1,1 +1,0 @@
-sudo -E python3.10-intel64 main.py

@@ -135,6 +135,7 @@ if __name__ == '__main__':
         'research_abstract': '',
     }
 
+
     ####################### USER INPUT SECTION #######################
     ##################################################################
 
@@ -151,14 +152,15 @@ if __name__ == '__main__':
     print(systemHeaderString + ' ' + bcolors.OKBLUE + '***************************************************************************************' + bcolors.ENDC)
 
     # Input raw script will be chopped to 1000 charactor per chunck.
-    chunk_size = 1000
+    chunk_size = 4000 # Send 4000 charactors per chunk
     chunks = split_list_into_chunks(raw_transcription, chunk_size)
     chunk_num = len(chunks)
 
     for i in range(chunk_num):
-        GPT_Prompt = '研究のタイトル：{}'.format(presentation_info_object['research_title']) + '\n' + '研究の概要：{}'.format(presentation_info_object['research_abstract'])
-        GPT_Prompt = GPT_Prompt + f'このは発表の発表を録音してスクリプトをwhisperで取り出したもので、第{i+1}部分である。スクリプトに聞き間違いがあり、研究のタイトルと概要に基づいて修正するとともに句読点をつけてください。特に、「以下は修正したスクリプト」など修正したスクリプトと関係しないものは一切示さないでください。'
-        GPT_Prompt = GPT_Prompt + 'また、翻訳は一切しないで、与えられたスクリプトの言語に従いなさい'
+        GPT_Prompt = 'タイトル：{}'.format(presentation_info_object['research_title']) + '\n' + '研究の概要：{}'.format(presentation_info_object['research_abstract'])
+        GPT_Prompt = GPT_Prompt + f'このは発表の発表を録音してスクリプトをwhisperで取り出したもので、第{i+1}部分である。スクリプトに聞き間違いがあり、タイトルと概要に基づいて修正するとともに句読点をつけてください。特に、「以下は修正したスクリプト」など修正したスクリプトと関係しないものは一切示さないでください。'
+        GPT_Prompt = GPT_Prompt + 'また、翻訳は一切しないで、与えられたスクリプトの言語に従いなさい,'
+        GPT_Prompt = GPT_Prompt + 'スクリプトと関係ないものは一切出力しないでください'
         GPT_Prompt = GPT_Prompt + '\n\n' + '発表のスクリプト：\n{}'.format(chunks[i])
 
         if not DEBUG_MODE:

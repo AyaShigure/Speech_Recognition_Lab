@@ -34,7 +34,7 @@ def record_system_sound_loop(sample_rate, device=None, channels=2):
         # List to hold recorded audio data / clear the list
         # audio_data = []
         start_time = time.time()
-        record_time = 60 # Record time before creating a wav file and loop
+        record_time = 120 # Record time before creating a wav file and loop
         print(headerString + ' ' +  bcolors.WARNING + f'Record time is set to {record_time}s' + bcolors.ENDC)
 
         with sd.InputStream(samplerate=sample_rate, channels=channels, callback=callback, device=device):
@@ -43,7 +43,7 @@ def record_system_sound_loop(sample_rate, device=None, channels=2):
 
                 # print(bcolors.OKGREEN + f'Record timt: [{round(time.time()-start_time, 0)}/{record_time}]' + bcolors.ENDC)
 
-                if keyboard.is_pressed('c') or time.time()-start_time > record_time: # Cut
+                if keyboard.is_pressed('command') or time.time()-start_time > record_time: # Cut
 
                     try:
                         print(headerString + ' ' +  bcolors.BOLD + "Auto-segmenting..." + bcolors.ENDC)
@@ -67,7 +67,7 @@ def record_system_sound_loop(sample_rate, device=None, channels=2):
                         print(headerString + ' ' +  bcolors.FAIL + '..ERROR_01_UNKNOWN REASON..' + bcolors.ENDC)
                         break
                     
-                if keyboard.is_pressed('q'): # Exit
+                if keyboard.is_pressed('esc'): # Exit
                     print(headerString + ' ' +  bcolors.BOLD + 'Manual segmenting... Creating wav segment...' + bcolors.ENDC)
                     # Save the audio data to a WAV file
                     now = datetime.datetime.now()
@@ -96,7 +96,7 @@ def main():
     print('====================================================================')
 
     # Device override
-    micInOverrideFlag = False
+    micInOverrideFlag = True
     # print(micInOverrideFlag)
     if micInOverrideFlag == True:
         print(headerString + ' ' +  bcolors.WARNING + 'Device override is activated' + bcolors.ENDC)
